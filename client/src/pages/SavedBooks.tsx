@@ -1,10 +1,43 @@
 import { useState, useEffect } from 'react';
 import { Container, Card, Button, Row, Col } from 'react-bootstrap';
+import { useQuery, useMutation, gql } from '@apollo/client';
+
 
 import { getMe, deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 import type { User } from '../models/User';
+
+const GET_BOOK = gql`
+  query GetBook {
+    me {
+      username
+      savedBooks {
+        bookId
+        title
+        authors
+        description
+        image
+      }
+    }
+  }
+`;
+
+const DELETE_BOOK = gql`
+  mutation DeleteBook($bookId: String!) {
+    deleteBook(bookId: $bookId) {
+      username
+      savedBooks {
+        bookId
+        title
+        authors
+        description
+        image
+      }
+    }
+  }
+`;
+
 
 const SavedBooks = () => {
   const [userData, setUserData] = useState<User>({
