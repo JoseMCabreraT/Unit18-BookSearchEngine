@@ -1,6 +1,7 @@
 # Unit18-BookSearchEngine
 
-I refactored a Google Books API search engine to be a GraphQL API built with Apollo Server.
+I refactored a Google Books API search engine to be a GraphQL API built with Apollo Server. The app is succesfully set up to use GraphQL queries
+and mutations to fetch and modify data.
 
 ## Description
 
@@ -14,9 +15,9 @@ Deployed application url:
 
 ## Usage
 
-![alt text](assets/images/Main-Page.png)
+![alt text]()
 
-![alt text](assets/images/Ticket-Page.png)
+![alt text]()
 
 ## Credits
 
