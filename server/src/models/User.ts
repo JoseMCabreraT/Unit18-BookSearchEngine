@@ -42,6 +42,7 @@ const userSchema = new Schema<UserDocument>(
   }
 );
 
+
 // hash user password
 userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
